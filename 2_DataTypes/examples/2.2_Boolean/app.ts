@@ -1,5 +1,15 @@
 //Step #1: Create a anonymous function auto-callable
 //----------------------
+(() => {
+  //JS
+  let a = true;
+  console.log({ a });
+
+  //Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+})()
+//----------------------
+
+//----------------------
 // (() => {
 
 //     let isA:boolean;

@@ -1,5 +1,17 @@
 //Step #1: Create a anonymous function auto-callable
 //----------------------
+(() => {
+  //JS
+  let a = [];
+  a = [1, true, "AString"];
+  // a = new Array(1, 'aValue', true);
+  console.log({ a });
+
+  //Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+})()
+//----------------------
+
+//----------------------
 // (() => {
 //   let numberArray: number[];
 //   numberArray = [1,2,3];
@@ -37,8 +49,8 @@
 
 //Step #2: Cascading types
 //----------------------
-(() => {
-  let numberArray: number[] = [1, 2, 3];
-  numberArray.forEach((num) => console.log(num.toFixed(2))); 
-})()
+// (() => {
+//   let numberArray: number[] = [1, 2, 3];
+//   numberArray.forEach((num) => console.log(num.toFixed(2))); 
+// })()
 //----------------------
