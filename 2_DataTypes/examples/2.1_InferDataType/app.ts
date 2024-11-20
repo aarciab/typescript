@@ -8,7 +8,7 @@ let b = 20;     //TS does not infers, TS recognizes to "b" as a number with valu
 //----------------------
 
 //----------------------
-let c;          //TS recognizes "c" as "any" since type was assigned
+let c;          //TS recognizes "c" as "any" since type was not assigned
 c = {};
 c = 3.14;
 c = "can hold anything without control";

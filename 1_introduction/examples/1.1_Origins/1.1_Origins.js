@@ -1,4 +1,4 @@
-const calculateAge = (birthday) => {
+function calculateAge(birthday) {
 
     var ageDifMs = Date.now() - birthday.getTime();
     var ageDate = Date.now(ageDifMs);

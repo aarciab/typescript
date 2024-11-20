@@ -1,5 +1,5 @@
 //Step #1: Write code below
-const msg: string = "Hello TypeScript";
+const msg: string = 40;
 console.log(msg);
 
 //Step #2: Ust TSC to generate TSConfig.json file
@@ -17,13 +17,12 @@ console.log(msg);
 
 //Step #8: Make some modification to "app.ts" file and check output file
 
-//Step #9: Make some modification to "app.js", add see output, explain the issue
-// with output "501"
+//Step #9: Make some modification to "app.js", add see output, explain the issue with output "501"
 
-/* 
+
 //----------------------
-var mySuperHero = {
-  name: "Superman",
+let mySuperHero = {
+  name: "Superman.",
   age: 30,
 };
 
@@ -31,17 +30,17 @@ mySuperHero.age = "50";
 
 console.log(mySuperHero.age + 1);
 //----------------------
-*/
+
 
 
 //Step #10: Make some modification to "app.ts", add see TS about the changes
 //----------------------
-var mySuperHero = {
-  name: "Superman",
-  age: 30,
-};
+// let mySuperHero = {
+//   name: "Superman",
+//   age: 30,
+// };
 
-mySuperHero.age = 50;
+// mySuperHero.age = 50;
 
-console.log(mySuperHero.age + 1);
+// console.log(mySuperHero.age + 1);
 //----------------------
