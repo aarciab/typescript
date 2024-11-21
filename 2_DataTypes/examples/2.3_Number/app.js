@@ -12,6 +12,7 @@
     console.log(`Division: ${a / 2}`);
     console.log(`Modulo: ${a % 3}`);
     console.log(`Exponential: ${a ** 2}`);
+    //Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 })();
 //----------------------
 //----------------------
