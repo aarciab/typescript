@@ -316,13 +316,38 @@
 // })()
 //----------------------
 //----------------------
+// (() => {
+//   const aFunction = (): (void | null) => {
+//     // return null;
+//     // return undefined;
+//     return;
+//   }
+//   let aValue = aFunction();
+//   console.log(aValue);
+// })()
+//----------------------
+// (==) VS (===) ===========================================================================
+//Check the differences of Strict vs Loose Equality
+//----------------------
 (() => {
-    const aFunction = () => {
-        // return null;
-        // return undefined;
-        return;
-    };
-    let aValue = aFunction();
-    console.log(aValue);
+    // const a1: any = "10";
+    // const b1: any = 10;
+    // console.log(`a1 == b1: ${a1 == b1}`);
+    // const x = true;
+    // const y = "true";
+    // console.log(x == y);
+    /*
+    // Rules ================================
+    - If either operand is a string, the other operand will be converted to a string.
+    - If either operand is a number, the other operand will be converted to a number.
+    - If either operand is a boolean, it will be converted to a number (true becomes 1 and false becomes 0).
+    - If one operand is an object and the other is a primitive value, the object will be converted to a
+      primitive value before the comparison is made.
+    - If one of the operands is null or undefined, the other must also be null or undefined to
+      return true. Otherwise it will return false.
+    */
+    const a2 = "10";
+    const b2 = 10;
+    console.log(`a2 === b2: ${a2 === b2}`);
 })();
 //----------------------
