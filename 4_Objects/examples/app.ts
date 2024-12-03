@@ -221,47 +221,299 @@
 
 //Type vs Interface
 //----------------------
-(() => {
+// (() => {
 
-    interface IHuman {
-      displayName: string,
-      age: number,
-    }
+//     interface IHuman {
+//       displayName: string,
+//       age: number,
+//     }
 
-    interface IHero extends IHuman {
-      powers: string[];
-      canFly(): boolean,
-      vehicules?: string[];
-    }
+//     interface IHero extends IHuman {
+//       powers: string[];
+//       canFly(): boolean,
+//       vehicules?: string[];
+//     }
 
-    const hero: IHero = {
-      displayName: "Batman",
-      age: 45,
-      powers: ["Money", "Smart"],
-      canFly: () => false,
-      vehicules: ["Batimovil"],
-    };
+//     const hero: IHero = {
+//       displayName: "Batman",
+//       age: 45,
+//       powers: ["Money", "Smart"],
+//       canFly: () => false,
+//       vehicules: ["Batimovil"],
+//     };
 
-    console.log({ hero });
+//     console.log({ hero });
 
-    //=============================
+//     //=============================
 
-    type TMachine = {
-      brand: string;
-      model: string;
-      serial: string;
-    };
+//     type TMachine = {
+//       brand: string;
+//       model: string;
+//       serial: string;
+//     };
 
-    type TRobot = {
-      functions: string[];
-    };
+//     type TRobot = {
+//       functions: string[];
+//     };
 
-    const teslaRobot: TRobot = {
-        functions: ["walk", "run", "jump"]
-    }
+//     const teslaRobot: TRobot = {
+//         functions: ["walk", "run", "jump"]
+//     }
 
-    console.log({ teslaRobot });
+//     console.log({ teslaRobot });
 
-})()
+// })()
 //----------------------
 
+
+//----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
+// //Class in TS 
+//----------------------
+// (() => {
+
+//     class Vehicule {
+//       private numberOfWeels: number;
+//       private numberofSeats: number;
+//       public name: string;
+
+//       constructor(numberOfWeels: number, numberofSeats: number, name: string) {
+//         this.numberOfWeels = numberOfWeels;
+//         this.numberofSeats = numberofSeats;
+//         this.name = name;
+//       }
+//     }
+
+//     const skateboard = new Vehicule(4, 1, "Skateboard");
+//     console.log(skateboard);
+
+// })()
+//----------------------
+
+
+// //----------------------
+// (() => {
+
+//     class Vehicule {
+
+//       constructor(
+//         private numberOfWeels: number, 
+//         private numberofSeats: number, 
+//         public name: string
+//       ) {}
+
+//     }
+
+//     const skateboard = new Vehicule(4, 1, "Skateboard");
+//     console.log(skateboard);
+//     console.log(skateboard.name);
+
+// })()
+// //----------------------
+
+
+// Static variable
+//----------------------
+// (() => {
+
+//     class Vehicule {
+//       public static className: string = "Vehicule class";
+
+//       constructor(
+//         private numberOfWeels: number,
+//         private numberofSeats: number,
+//         public name: string
+//       ) {}
+      
+//     }
+
+//     const skateboard = new Vehicule(4, 1, "Skateboard");
+//     console.log(skateboard);
+//     console.log(skateboard.name);
+
+//     const car = new Vehicule(4, 4, "Car");
+//     // console.log(skateboard.className);
+//     console.log('Static value: ' + Vehicule.className);
+
+// })()
+//----------------------
+
+
+
+// Static variable & Method
+//----------------------
+// (() => {
+
+//     class Vehicule {
+//       public static className: string = "Vehicule class";
+//       public static getClassName(): string {
+//         return Vehicule.className;
+//       }
+
+//       constructor(
+//         private numberOfWeels: number,
+//         private numberofSeats: number,
+//         public name: string
+//       ) {}
+
+//       getDescription(): string {
+//         return `className: '${Vehicule.className}' - name: '${this.name}' - numberOfWeels: '${this.numberOfWeels}' - numberofSeats: '${this.numberofSeats}'`;
+//       }
+//     }
+
+//     const skateboard = new Vehicule(4, 1, "Skateboard");
+//     console.log(skateboard.getDescription());
+
+//     console.log("Vehicule.getClassName(): " + Vehicule.getClassName());
+
+// })()
+//----------------------
+
+
+// Inheritance
+//----------------------
+// (() => {
+
+//     class Vehicule {
+//       public static className: string = "Vehicule class";
+//       public static getClassName(): string {
+//         return Vehicule.className;
+//       }
+
+//       constructor(
+//         private numberOfWeels: number,
+//         private numberofSeats: number,
+//         public name: string,
+//         protected year: number
+//       ) {}
+
+//       getDescription(): string {
+//         return `className: '${Vehicule.className}' - name: '${this.name}' - numberOfWeels: '${this.numberOfWeels}' - numberofSeats: '${this.numberofSeats}'`;
+//       }
+
+//       protected getManufactureYear() {
+//         return this.year;
+//       };
+//     }
+
+//     class Motorcycle extends Vehicule {
+//       constructor(
+//         numberofSeats: number,
+//         public brand: string,
+//         public year: number
+//       ) {
+//         super(2, numberofSeats, "Motorcycle", year);
+//       }
+
+//       getDescription(): string {
+//         return super.getDescription() + ` - brand: '${this.brand}'`;
+//       }
+
+//       getYear() {
+//         return super.getManufactureYear();
+//       }
+//     }
+
+//     const yamaha = new Motorcycle(2, "Yamaha", 2024);
+//     console.log(yamaha);
+//     console.log(yamaha.getDescription());
+//     // console.log(yamaha.getManufactureYear());  //Protected methods can only be visible by child classes
+//     console.log(yamaha.getYear());
+// })()
+//----------------------
+
+
+
+// Getters & Setters
+//----------------------
+// (() => {
+
+//     class Vehicule {
+//       private _numberOfWeels: number = 0;
+
+//       public get getNumberOfWeels() {
+//         return this._numberOfWeels;
+//       }
+
+//       public set setNumberOfWeels(numberOfWeels: number) {
+//         this._numberOfWeels = numberOfWeels;
+//       }
+
+//     }
+
+//     const yamaha = new Vehicule();
+//     console.log(yamaha);
+
+//     yamaha.setNumberOfWeels = 3;
+//     console.log("_numberOfWeels: " + yamaha.getNumberOfWeels);
+// })()
+//----------------------
+
+
+
+// Readonly
+//----------------------
+// (() => {
+
+//     class Vehicule {
+//       readonly _vin: string;
+
+//       constructor(vin: string) {
+//         this._vin = vin;
+//       }
+//     }
+
+//     const yamaha = new Vehicule('XYZ123');
+//     console.log(yamaha);
+
+//     // yamaha._vin = 'abc321';
+// })()
+//----------------------
+
+
+
+// Abstract classes
+//----------------------
+(() => {
+
+    abstract class Vehicule {
+      private _numberOfWeels: number;
+
+      constructor(numberOfWeels: number) {
+        this._numberOfWeels = numberOfWeels;
+      }
+
+      public get numberOfWeels() {
+        return this._numberOfWeels;
+      }
+
+      public set numberOfWeels(numberOfWeels: number) {
+        this._numberOfWeels = numberOfWeels;
+      }
+    }
+
+    class Car extends Vehicule {
+      constructor(numberOfWeels: number, public brand: string) {
+        super(numberOfWeels);
+      }
+    }
+
+    class Bus extends Vehicule {
+      constructor(numberOfWeels: number, public brand: string) {
+        super(numberOfWeels);
+      }
+    }
+
+    // const toyota = new Vehicule(4);
+
+    const honda = new Car(4, 'Honda');
+    console.log(honda);
+
+    let vehicule: Vehicule = new Bus(10, 'Scania');
+    console.log(vehicule);
+    
+    vehicule = honda;
+    console.log(honda);
+})()
+//----------------------
